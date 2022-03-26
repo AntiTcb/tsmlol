@@ -1,0 +1,28 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, html {
+    color: black;
+    height: 100%;
+}
+
+.bg-image {
+    background-image: url(kekwbg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(3px);
+    height: 100%;
+}
+
+.bg-image + div {
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.5);
+    width: 90%;
+}
+
+.link {
+    @apply underline hover:text-blue-300 text-blue-500 text-lg font-semibold block
+}
