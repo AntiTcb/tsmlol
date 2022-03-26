@@ -9,7 +9,7 @@ body, html {
 }
 
 .bg-image {
-    background-image: url(kekwbg.png);
+    background-image: url(/kekwbg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
