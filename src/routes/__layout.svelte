@@ -1,7 +1,12 @@
 <script>
     import "../app.css";
     import Icon from '@iconify/svelte';
+    import GoogleAnalytics from '@sajuthankappan/sveltekit-google-analytics';
+    import { page } from '$app/stores';
+    const gaKey = import.meta.env.VITE_GA_KEY;
 </script>
+
+<GoogleAnalytics {page} key={gaKey} />
 
 <slot></slot>
 
