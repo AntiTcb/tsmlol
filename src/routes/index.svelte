@@ -1,9 +1,21 @@
+
 <script>
     import { onMount } from "svelte";
     import { copypasta, getRandomCopypasta } from "../lib/copypastaStore";
     import Icon from '@iconify/svelte';
+    const gaKey = import.meta.env.VITE_GA_KEY;
 
     onMount(() => getRandomCopypasta());
+
+    const handleCopypastaButton = () => {
+        getRandomCopypasta();
+        if (window.gtag) {
+            window.gtag("event", 'getPasta', {
+                'event_category': 'general',
+                'event_label': $copypasta
+            });
+        }
+    };
 
     const copy = () => {
         navigator.clipboard.writeText($copypasta)
@@ -13,6 +25,7 @@
 
 <svelte:head>
     <title>TSM XD</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={gaKey}"></script>
 </svelte:head>
 
 <div class="flex flex-col items-center justify-between h-5/6">
@@ -21,7 +34,7 @@
         <button class="border-2 border-blue-800 p-2 rounded-md hover:border-double bg-blue-500 hover:bg-blue-600" on:click|preventDefault={() => copy()}>
             <Icon icon="ep:copy-document" />
         </button>
-        <button class="border-2 border-green-800 p-2 rounded-md hover:border-double bg-green-500 hover:bg-green-600" on:click|preventDefault={() => getRandomCopypasta()}>
+        <button class="border-2 border-green-800 p-2 rounded-md hover:border-double bg-green-500 hover:bg-green-600" on:click|preventDefault={() => handleCopypastaButton()}>
             <Icon icon="el:refresh" />
         </button>
     </div>
