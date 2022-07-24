@@ -1,7 +1,7 @@
 
 <script>
     import { onMount } from "svelte";
-    import { copypasta, getRandomCopypasta } from "../lib/copypastaStore";
+    import { copypasta, getRandomCopypasta, pastaTotal } from "../lib/copypastaStore";
     import Icon from '@iconify/svelte';
     const gaKey = import.meta.env.VITE_GA_KEY;
 
@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-    <title>TSM XD</title>
+    <title>TSM XD - {pastaTotal()} messages and counting!</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id={gaKey}"></script>
 </svelte:head>
 
