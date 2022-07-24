@@ -23,4 +23,6 @@ export const getRandomCopypasta = () => {
     copypasta.set(lastMsg);
 }
 
+export const pastaTotal = () => copypastas.length;
+
 export const copypasta = writable("");
