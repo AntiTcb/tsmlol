@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+import { readable, writable } from "svelte/store";
 import copypastas from "../../static/tsm.json";
 
 let lastMsg;
@@ -24,5 +24,7 @@ export const getRandomCopypasta = () => {
 }
 
 export const pastaTotal = () => copypastas.length;
+
+export const allPastas = readable(copypastas);
 
 export const copypasta = writable("");
