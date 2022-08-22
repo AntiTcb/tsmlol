@@ -1,5 +1,5 @@
 import { readable, writable } from 'svelte/store';
-import copypastas from '../../static/tsm.json';
+import copypastas from '../tsm.json';
 
 let lastMsg;
 
