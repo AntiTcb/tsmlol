@@ -3,7 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body, html {
+body,
+html {
     color: black;
     height: 100%;
 }
@@ -18,11 +19,11 @@ body, html {
 }
 
 .bg-image + div {
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 90%;
 }
 
 .link {
-    @apply underline hover:text-blue-300 text-blue-500 text-lg font-semibold block
+    @apply underline hover:text-blue-300 text-blue-500 text-lg font-semibold block;
 }
